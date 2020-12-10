@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@pages": ["pages"],
-      "@styles": ["styles"],
-      "@store/*": ["store/*"]
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+      "@store/*": ["src/store/*"]
     },
     "strictNullChecks": true,
     "moduleResolution": "node",
@@ -25,6 +25,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "exclude": ["node_modules", "lib", "es"],
+  "exclude": ["node_modules", "lib", "es", ".next", "public"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

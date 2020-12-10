@@ -6,8 +6,9 @@
       {
         "root": ["./"],
         "alias": {
-          "@styles": "./styles",
-          "@store": "./store"
+          "@styles": "./src/styles",
+          "@store": "./src/store",
+          "@pages": "./src/pages"
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
