@@ -4,7 +4,9 @@
     "paths": {
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
-      "@store/*": ["src/store/*"]
+      "@store/*": ["src/store/*"],
+      "@components/*": ["src/components/*"],
+      "@antd": ["src//components/antd/index.ts"]
     },
     "strictNullChecks": true,
     "moduleResolution": "node",

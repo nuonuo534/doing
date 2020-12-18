@@ -1,12 +1,16 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
-import '@styles/globals.css';
+import { ConfigProvider, AntdConfigProps } from '@antd';
+import '@styles/globals.scss';
+import 'antd/dist/antd.css';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <RecoilRoot>
-      <Component {...pageProps} />
+      <ConfigProvider {...AntdConfigProps}>
+        <Component {...pageProps} />
+      </ConfigProvider>
     </RecoilRoot>
   );
 };

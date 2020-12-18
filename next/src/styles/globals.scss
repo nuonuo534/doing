@@ -1,9 +1,11 @@
 html,
-body {
+body,
+a,button, div, span, img, p, textarea, video, input, h1,h2,h3,h4,h5,h6, table,tr,td,ul,li {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -11,6 +13,3 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}

@@ -8,7 +8,9 @@
         "alias": {
           "@styles": "./src/styles",
           "@store": "./src/store",
-          "@pages": "./src/pages"
+          "@pages": "./src/pages",
+          "@antd": "./src/components/antd/index.ts",
+          "@components": "./src/components"
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

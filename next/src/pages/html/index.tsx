@@ -2,7 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useRecoilState } from 'recoil';
 import { textState } from '@store/state';
-import styles from '@styles/Home.module.css';
+import { Button } from '@antd';
+import styles from '@styles/Home.module.scss';
 
 export default function Home() {
   const [text, setText] = useRecoilState(textState);
@@ -20,7 +21,7 @@ export default function Home() {
     <div className={styles.container}>
       <input type="text" value={text} onChange={onChange} />
       {text}
-      <button onClick={goRouter}>测试</button>
+      <Button onClick={goRouter}>测试</Button>
     </div>
   );
 }
