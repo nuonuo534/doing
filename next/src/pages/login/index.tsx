@@ -21,7 +21,7 @@ export default function Home() {
     router.push('/');
   };
 
-  const columns: TypeColumnItem = [
+  const columns = [
     { label: '账号', name: 'username' },
     { label: '密码', name: 'password' },
   ];

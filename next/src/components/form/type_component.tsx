@@ -2,12 +2,13 @@ import { FC } from 'react';
 import { Input } from '@antd';
 
 interface TypeProps {
-  typeName: string;
+  typename: string;
   [P: string]: any;
 }
 
 const TypeComponent: FC<TypeProps> = (props) => {
-  const typeName = props.typeName.toLowerCase();
+  const typeName = props.typename?.toLowerCase();
+
   if (typeName === 'input') {
     return <Input {...props} />;
   } else {

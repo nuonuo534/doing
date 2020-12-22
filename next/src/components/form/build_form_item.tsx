@@ -11,7 +11,7 @@ export interface TypeColumnItem {
 }
 
 interface TypeFormItemProps {
-  columns: [TypeColumnItem];
+  columns: TypeColumnItem[];
 }
 
 const BuildFormItem: FC<TypeFormItemProps> = (props) => {
@@ -24,7 +24,7 @@ const BuildFormItem: FC<TypeFormItemProps> = (props) => {
         if (Render && isValidElement(Render)) {
           newComponent = Render;
         } else {
-          const newProps = { ...(item.props || {}), typeName: item.type };
+          const newProps = { ...(item.props || {}), typename: item.type };
           newComponent = <TypeComponent {...newProps} />;
         }
         const key = Array.isArray(item.name) ? item.name.join('-') : item.name;
