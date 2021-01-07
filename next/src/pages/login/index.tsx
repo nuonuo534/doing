@@ -1,20 +1,18 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { useRecoilState } from 'recoil';
-import { textState } from '@store/state';
+// import { useRecoilState } from 'recoil';
+// import { textState } from '@store/state';
 import { Button, Form } from '@antd';
-import BuildFormItem, {
-  TypeColumnItem,
-} from '@components/form/build_form_item';
+import BuildFormItem from '@components/form/build_form_item';
 import styles from './index.module.scss';
 
 export default function Home() {
-  const [text, setText] = useRecoilState(textState);
+  // const [text, setText] = useRecoilState(textState);
   const router = useRouter();
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
-  };
-
+  // const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setText(event.target.value);
+  // };
+  // console.log(text);
   console.log(router);
   const goRouter = (event: React.MouseEvent<Element, MouseEvent>) => {
     event.preventDefault();

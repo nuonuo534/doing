@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function useFetch(config, deps) {
+export default function useFetch(config: any, deps: any) {
   const abortController = new AbortController();
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState();
@@ -11,7 +11,7 @@ export default function useFetch(config, deps) {
       ...config,
       signal: abortController.signal,
     })
-      .then((res) => setResult(res))
+      .then((res) => setResult(res as any))
       .finally(() => setLoading(false));
   }, deps);
 
