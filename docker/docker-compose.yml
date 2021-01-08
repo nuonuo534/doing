@@ -1,1 +1,32 @@
+# varsion：可选 1，2，2.x，3.x
+# services：服务组
+# admin：服务名称，唯一，多个 docker-compose.yml 有相同名称的，下面的容器会覆盖
+# build：构建参数，如果 docker-compose.yml、Dockfile 都和 built 文件加目录，可直接 ./ ，当前构建上下文，当前 Dockerfile；如果 docker-compose.yml、Dockfile 都放在 docker 文件夹下，则需指定构建上下文 context 和 dokcerfile
+# context：构建上下文
+# dockerfile：指定 dockerfile 路径
+# image：指定使用的镜像，如果镜像存在，会直接使用镜像，否则的话通过上面的 dockerfile 构建
+# ports：端口映射，可多个。文件中 - 就代表参数是数组形式，可以多个
+# container_name：容器名字，若不指定，这默认为 当前目录_admin_index （admin：服务名，index：数字，累加，一个服务可以有可以容器，不同 docker-compose.yml 里有相同服务）
 version: '3'
+services:
+  client:
+    image: fulldigits/yarn:node-14
+    build:
+      context: ../
+      dockerfile: ./docker/client/DockerFile
+    image: doing:next_project
+    ports:
+      - 9000:9000
+    networks:
+      - doing
+    container_name: doing
+  nginx:
+    image: nginx
+    build:
+      context: ../
+      dockerfile: ./docker/nginx/DockerFile
+    ports:
+      - 80:80
+    networks:
+      - doing
+    container_name: nginx
