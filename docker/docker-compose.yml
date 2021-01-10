@@ -16,17 +16,13 @@ services:
       dockerfile: ./docker/client/DockerFile
     image: doing:next_project
     ports:
-      - 9000:9000
-    networks:
-      - doing
+      - 3000:3000
     container_name: doing
-  nginx:
-    image: nginx
-    build:
-      context: ../
-      dockerfile: ./docker/nginx/DockerFile
-    ports:
-      - 80:80
-    networks:
-      - doing
-    container_name: nginx
+  # nginx:
+  #   image: nginx
+  #   build:
+  #     context: ../
+  #     dockerfile: ./docker/nginx/DockerFile
+  #   ports:
+  #     - 80:80
+  #   container_name: nginx
