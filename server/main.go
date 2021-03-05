@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"server/algorithm"
+
+	_ "github.com/nuonuo534/setting"
 )
 
 func main() {
