@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"server/algorithm"
 
-	_ "github.com/nuonuo534/setting"
+	_ "server/setting"
 )
 
 func main() {
