@@ -23,9 +23,13 @@ require (
 	gorm.io/gorm v1.20.11
 	server/algorithm v1.0.0 //
 	server/setting v0.0.0
+	server/api v0.0.0
+	server/routers v0.0.0
 )
 
 replace (
 	server/algorithm => ./algorithm
 	server/setting => ./pkg/setting
+	server/api => ./routers/api
+	server/routers => ./routers
 )

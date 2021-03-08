@@ -1,5 +1,6 @@
 package e
 
+// MsgFlags 消息错误提示
 var MsgFlags = map[int]string{
 	SUCCESS:                        "ok",
 	ERROR:                          "fail",
@@ -12,6 +13,7 @@ var MsgFlags = map[int]string{
 	ERROR_AUTH:                     "Token错误",
 }
 
+// GetMsg code获取消息
 func GetMsg(code int) string {
 	msg, ok := MsgFlags[code]
 	if ok {
