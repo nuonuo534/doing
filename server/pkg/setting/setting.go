@@ -15,7 +15,7 @@ var (
 	ReadTimeout  time.Duration
 	WriteTimeout time.Duration
 
-	PageSize  int64
+	PageSize  int
 	JwtSecret string
 )
 
@@ -64,5 +64,5 @@ func LoadApp() {
 	app := Config["app"].(map[string]interface{})
 
 	JwtSecret = app["jwt_secret"].(string)
-	PageSize = app["page_size"].(int64)
+	PageSize = int(app["page_size"].(int64))
 }
