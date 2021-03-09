@@ -12,17 +12,12 @@ import (
 )
 
 var sqlDB *sql.DB
-
-type Model struct {
-	ID         int `gorm: "primary_key" json:"id"`
-	CreatedOn  int `json: "created_on"`
-	ModifiedOn int `json: "modified_on"`
-}
+var db *gorm.DB
 
 func init() {
 	var (
-		err error
-		// dbType   string
+		err      error
+		dbErr    error
 		dbName   string
 		user     string
 		password string
@@ -43,14 +38,16 @@ func init() {
 		password,
 		host,
 		dbName)
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db, dbErr = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
-	if err != nil {
-		log.Println(err)
+	if dbErr != nil {
+		log.Println(dbErr)
 	}
 
 	sqlDB, err = db.DB()
-
+	if err != nil {
+		log.Println(err)
+	}
 	// db.SingularTable(true)
 	sqlDB.SetMaxIdleConns(10)
 	sqlDB.SetMaxOpenConns(100)

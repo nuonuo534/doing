@@ -25,6 +25,7 @@ require (
 	server/setting v0.0.0
 	server/api v0.0.0
 	server/routers v0.0.0
+	server/models v0.0.0
 )
 
 replace (
@@ -32,4 +33,5 @@ replace (
 	server/setting => ./pkg/setting
 	server/api => ./routers/api
 	server/routers => ./routers
+	server/models => ./models
 )
