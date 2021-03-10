@@ -2,7 +2,7 @@ package models
 
 // Tag 表
 type Tag struct {
-	ID        uint   `gorm:"primaryKey""`
+	Models
 	Name      string `gorm:"<-";validate:"required,len=20"`
 	CreatedAt int64  `gorm:"autoCreateTime"`
 	CreatedBy string `gorm:"<-";validate:"required,len=20`

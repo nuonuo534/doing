@@ -100,7 +100,24 @@ func AddTag(c *gin.Context) {
 
 // EditTag edit
 func EditTag(c *gin.Context) {
-
+	id := com.StrTo(c.Param("id")).MustInt()
+	name := c.Query("name")
+	createdBy := c.Query("created_by")
+	state := c.Query("state")
+	var tags models.Tag
+	if tags.ExistTableByKey("id", id) {
+		data := make(map[string]interface{})
+		data["name"] = name
+		data["created_by"] = createdBy
+		data["state"] = state
+		// models.EditTag(id, data)
+	}
+	code := e.SUCCESS
+	c.JSON(http.StatusOK, gin.H{
+		"code": code,
+		"msg":  e.GetMsg(code),
+		"data": make(map[string]string),
+	})
 }
 
 // DeleteTag delete
