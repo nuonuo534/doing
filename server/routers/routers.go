@@ -4,6 +4,8 @@ import (
 	"server/api"
 	"server/setting"
 
+	"server/middleware"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,10 +18,12 @@ func InitRouter() *gin.Engine {
 	r.Use(gin.Recovery())
 
 	gin.SetMode(setting.RunMode)
+	r.GET("/auth", api.GetAuth)
 
 	apiR := r.Group("/api")
-
+	apiR.Use(middleware.JWT())
 	{
+
 		apiR.GET("/tags", api.GetTags)
 
 		apiR.POST("/tags", api.AddTag)

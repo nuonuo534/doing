@@ -26,6 +26,9 @@ require (
 	server/api v0.0.0
 	server/routers v0.0.0
 	server/models v0.0.0
+	server/util v0.0.0
+	server/e v0.0.0
+	server/middleware v0.0.0
 )
 
 replace (
@@ -34,4 +37,7 @@ replace (
 	server/api => ./routers/api
 	server/routers => ./routers
 	server/models => ./models
+	server/util => ./pkg/util
+	server/e => ./pkg/e
+	server/middleware => ./middleware
 )
