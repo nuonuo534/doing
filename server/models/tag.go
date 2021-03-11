@@ -3,12 +3,12 @@ package models
 // Tag 表
 type Tag struct {
 	Models
-	Name      string `gorm:"<-";validate:"required,len=20"`
-	CreatedAt int64  `gorm:"autoCreateTime"`
-	CreatedBy string `gorm:"<-";validate:"required,len=20`
-	UpdatedAt int64  `gorm:"autoUpdateTime"`
-	UpdatedBy string `gorm:"<-";validate:"required,len=20`
-	State     int
+	Name      string `json:"name" gorm:"<-" validate:"required,len=20"`
+	CreatedAt int64  `json:"created_at" gorm:"autoCreateTime"`
+	CreatedBy string `json:"created_by" gorm:"<-" validate:"required,len=20`
+	UpdatedAt int64  `json:"updated_at" gorm:"autoUpdateTime"`
+	UpdatedBy string `json:"updated_by" gorm:"<-" validate:"required,len=20`
+	State     int    `json:"state"`
 }
 
 // GetTags 获取tag

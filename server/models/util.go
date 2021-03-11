@@ -5,7 +5,7 @@ import (
 )
 
 type Models struct {
-	ID uint `gorm:"primaryKey";json:"id"`
+	ID uint `gorm:"primaryKey" json:"id"`
 }
 
 func (m Models) ExistTableByKey(key string, value interface{}) bool {
