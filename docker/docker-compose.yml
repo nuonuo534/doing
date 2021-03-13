@@ -18,7 +18,7 @@ services:
     ports:
       - 3000:3000
     container_name: client
-  client:
+  server:
     image: goland:1.14
     build:
       context: ../
