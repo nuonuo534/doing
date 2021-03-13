@@ -14,10 +14,19 @@ services:
     build:
       context: ../
       dockerfile: ./docker/client/DockerFile
-    image: doing:next_project
+    image: doing:client
     ports:
       - 3000:3000
-    container_name: doing
+    container_name: client
+  client:
+    image: goland:1.14
+    build:
+      context: ../
+      dockerfile: ./docker/server/DockerFile
+    image: doing:server
+    ports:
+      - 8000:8000
+    container_name: server
   # nginx:
   #   image: nginx
   #   build:

@@ -1,0 +1,19 @@
+FROM goland:1.14
+
+
+RUN go env -w GO111MODULE=on
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+RUN export GO111MODULE=on
+RUN export GOPROXY=https://goproxy.cn
+# 在容器中创建目录
+RUN mkdir -p /usr/src/server
+
+WORKDIR /usr/src/server
+
+COPY ./server /usr/src/server
+
+RUN go build main.go
+
+EXPOSE 8000
+
+ENTRYPOINT [ "./server" ]
