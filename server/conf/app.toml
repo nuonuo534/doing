@@ -14,7 +14,7 @@ WRITE_TIMEOUT = 60
 [database]
 TYPE = "mysql"
 USER = "root"
-PASSWORD = "nuonuo534"
+PASSWORD = "123456"
 #127.0.0.1:3306
 HOST = "127.0.0.1:3306"
 NAME = "blob"

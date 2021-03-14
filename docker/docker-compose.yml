@@ -10,7 +10,6 @@
 version: '3'
 services:
   client:
-    image: fulldigits/yarn:node-14
     build:
       context: ../
       dockerfile: ./docker/client/DockerFile
@@ -18,15 +17,26 @@ services:
     ports:
       - 3000:3000
     container_name: client
+  mysql:
+    build:
+      context: ../
+      dockerfile: ./docker/mysql/DockerFile
+    image: doing:mysql
+    ports:
+      - 3306:3306
+    container_name: mysql
   server:
-    image: goland:1.14
     build:
       context: ../
       dockerfile: ./docker/server/DockerFile
+    depends_on: 
+      - mysql
     image: doing:server
+   
     ports:
       - 8000:8000
     container_name: server
+ 
   # nginx:
   #   image: nginx
   #   build:

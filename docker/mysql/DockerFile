@@ -1,0 +1,11 @@
+FROM mysql:5.7.25
+
+ENV MYSQL_ROOT_PASSWORD =123456
+# COPY ./docker/mysql/conf.sh /mysql/conf.sh
+# COPY ./docker/mysql/privileges.sql /mysql/privileges.sql
+
+# RUN /mysql/conf.sh
+
+VOLUME  ["./docker/mysql", "/var/lib/mysql"]
+
+CMD ["service", "mysql", "start"]
